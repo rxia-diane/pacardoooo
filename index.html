@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Data Bloom | ESP32 Monitor</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- =========================================
+         TOP HEADER
+    ========================================== -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                DB
+            </div>
+
+            <div>
+
+                <h1>
+                    Data Bloom
+                </h1>
+
+                <p>
+                    ESP32 REALTIME LOGGER
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="status">
+
+            <span
+                id="statusDot"
+                class="status-dot"
+            ></span>
+
+            <span id="statusText">
+                READY
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         INTRO
+    ========================================== -->
+
+    <section class="intro">
+
+        <div class="intro-copy">
+
+
+            <h2>
+                Keep it simple.
+                <br>
+                Let the data speak.
+            </h2>
+
+           
+
+        </div>
+
+
+        <div class="set-box">
+
+            <div class="set-title">
+
+                <span>
+                    COLLECTION INTERVAL
+                </span>
+
+                <small>
+                    SECONDS
+                </small>
+
+            </div>
+
+
+            <div class="set-control">
+
+                <input
+                    type="number"
+                    id="interval"
+                    min="1"
+                    step="1"
+                    placeholder="10"
+                >
+
+                <button id="setBtn">
+                    SET
+                </button>
+
+            </div>
+
+
+            <div class="set-status">
+
+
+                <strong id="intervalDisplay">
+                  
+                </strong>
+
+                <span>
+                    
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         MAIN TABLE
+    ========================================== -->
+
+    <section class="data-section">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="mini-label">
+                    LIVE FIREBASE DATA
+                </span>
+
+                <h2>
+                    Collection Records
+                </h2>
+
+            </div>
+
+
+            <div class="record-total">
+
+                <span>
+                    RECORDS
+                </span>
+
+                <strong id="recordCount">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             ONE TABLE ONLY
+        ====================================== -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            SET SECONDS
+                        </th>
+
+                        <th>
+                            DATE
+                        </th>
+
+                        <th>
+                            TIME
+                        </th>
+
+                        <th>
+                            FLOAT
+                        </th>
+
+                        <th>
+                            INTEGER
+                        </th>
+
+                        <th>
+                            STRING
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="sensorTable">
+
+                    <tr>
+
+                        <td
+                            colspan="6"
+                            class="empty"
+                        >
+
+                            Waiting for ESP32 records...
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         SMALL FOOTER STATUS
+    ========================================== -->
+
+    <section class="bottom-info">
+
+        <div>
+
+            <span>
+                DEVICE
+            </span>
+
+            <strong>
+                ESP32
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                DATABASE
+            </span>
+
+            <strong>
+                REALTIME DATABASE
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                MODE
+            </span>
+
+            <strong id="modeText">
+                IDLE
+            </strong>
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+
+        DATA BLOOM
+        <span>•</span>
+        ESP32
+        <span>•</span>
+        FIREBASE
+
+    </footer>
+
+
+</div>
+
+
+<script
+    type="module"
+    src="script.js"
+></script>
+
+
+</body>
+
+</html>
